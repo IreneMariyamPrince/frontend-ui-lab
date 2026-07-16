@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Table UI</title>
+</head>
+<body>
+  
+  <div class="table-container">
+    <div class="table-header">
+      <div class="table-title">
+        <h2>Team Members</h2>
+        <span class="badge">12 Users</span>
+      </div>
+      <div class="table-actions">
+        <div class="search-input">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Search members..." />
+        </div>
+        <button class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+          Filter
+        </button>
+        <button class="btn btn-primary">Add Member</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="checkbox-cell">
+              <label class="custom-checkbox">
+                <input type="checkbox" id="selectAll" />
+                <span class="checkmark"></span>
+              </label>
+            </th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Last Active</th>
+            <th class="actions-cell"></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          
+          <!-- Row 1 -->
+          <tr data-page="1">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="Avatar" class="avatar" /><div><div class="user-name">Olivia Rhye</div><div class="user-email">olivia@acme.com</div></div></div></td>
+            <td>Product Designer</td><td><span class="status-badge active">Active</span></td><td>2 hrs ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 2 -->
+          <tr data-page="1">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=a04258a2462d826712d" alt="Avatar" class="avatar" /><div><div class="user-name">Phoenix Baker</div><div class="user-email">phoenix@acme.com</div></div></div></td>
+            <td>Engineering Manager</td><td><span class="status-badge offline">Offline</span></td><td>Yesterday</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 3 -->
+          <tr data-page="1">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><div class="avatar placeholder">LC</div><div><div class="user-name">Lana Steiner</div><div class="user-email">lana@acme.com</div></div></div></td>
+            <td>Frontend Developer</td><td><span class="status-badge active">Active</span></td><td>10 mins ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 4 -->
+          <tr data-page="1">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=a048581f4e29026701d" alt="Avatar" class="avatar" /><div><div class="user-name">Demi Wilkinson</div><div class="user-email">demi@acme.com</div></div></div></td>
+            <td>Backend Developer</td><td><span class="status-badge invited">Invited</span></td><td>Never</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          
+          <!-- Row 5 -->
+          <tr data-page="2" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=1" alt="Avatar" class="avatar" /><div><div class="user-name">Candice Wu</div><div class="user-email">candice@acme.com</div></div></div></td>
+            <td>QA Engineer</td><td><span class="status-badge active">Active</span></td><td>3 hrs ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 6 -->
+          <tr data-page="2" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=2" alt="Avatar" class="avatar" /><div><div class="user-name">Natali Craig</div><div class="user-email">natali@acme.com</div></div></div></td>
+            <td>UI/UX Designer</td><td><span class="status-badge active">Active</span></td><td>5 mins ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 7 -->
+          <tr data-page="2" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><div class="avatar placeholder">DD</div><div><div class="user-name">Drew Cano</div><div class="user-email">drew@acme.com</div></div></div></td>
+            <td>DevOps Engineer</td><td><span class="status-badge offline">Offline</span></td><td>2 days ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 8 -->
+          <tr data-page="2" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=3" alt="Avatar" class="avatar" /><div><div class="user-name">Orlando Diggs</div><div class="user-email">orlando@acme.com</div></div></div></td>
+            <td>Fullstack Developer</td><td><span class="status-badge active">Active</span></td><td>1 hr ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+
+          <!-- Row 9 -->
+          <tr data-page="3" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=4" alt="Avatar" class="avatar" /><div><div class="user-name">Andi Lane</div><div class="user-email">andi@acme.com</div></div></div></td>
+            <td>Data Scientist</td><td><span class="status-badge active">Active</span></td><td>Just now</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 10 -->
+          <tr data-page="3" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><div class="avatar placeholder">KM</div><div><div class="user-name">Kate Morrison</div><div class="user-email">kate@acme.com</div></div></div></td>
+            <td>Product Manager</td><td><span class="status-badge invited">Invited</span></td><td>Never</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 11 -->
+          <tr data-page="3" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=5" alt="Avatar" class="avatar" /><div><div class="user-name">Koray Okumus</div><div class="user-email">koray@acme.com</div></div></div></td>
+            <td>Backend Developer</td><td><span class="status-badge active">Active</span></td><td>4 hrs ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+          <!-- Row 12 -->
+          <tr data-page="3" style="display: none;">
+            <td class="checkbox-cell"><label class="custom-checkbox"><input type="checkbox" class="row-checkbox" /><span class="checkmark"></span></label></td>
+            <td><div class="user-cell"><img src="https://i.pravatar.cc/150?u=6" alt="Avatar" class="avatar" /><div><div class="user-name">Eve Leroux</div><div class="user-email">eve@acme.com</div></div></div></td>
+            <td>Support Specialist</td><td><span class="status-badge offline">Offline</span></td><td>1 week ago</td>
+            <td class="actions-cell"><button class="action-btn"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg></button></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <div class="page-info">Showing 1 to 4 of 12 entries</div>
+      <div class="page-controls">
+        <button class="btn btn-outline" disabled>Previous</button>
+        <div class="page-numbers">
+          <button class="page-num active">1</button>
+          <button class="page-num">2</button>
+          <button class="page-num">3</button>
+        </div>
+        <button class="btn btn-outline">Next</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

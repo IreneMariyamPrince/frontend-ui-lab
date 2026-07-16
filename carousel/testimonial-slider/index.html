@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+</head>
+<body>
+  <div class="testimonial-container">
+    <div class="testimonial-track" id="track">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-slide active">
+        <div class="glass-card">
+          <div class="quote-icon">“</div>
+          <p class="feedback">This UI library is absolutely stunning! The attention to detail and smooth animations have elevated our SaaS product completely.</p>
+          <div class="user-info">
+            <img src="https://i.pravatar.cc/150?img=1" alt="Sarah J." class="avatar" />
+            <div>
+              <h4 class="name">Sarah J.</h4>
+              <span class="role">Product Manager</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="testimonial-slide">
+        <div class="glass-card">
+          <div class="quote-icon">“</div>
+          <p class="feedback">I've never seen such premium vanilla JS components. It made our transition to React so much easier since the CSS was already perfect.</p>
+          <div class="user-info">
+            <img src="https://i.pravatar.cc/150?img=11" alt="Mark D." class="avatar" />
+            <div>
+              <h4 class="name">Mark D.</h4>
+              <span class="role">Frontend Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-slide">
+        <div class="glass-card">
+          <div class="quote-icon">“</div>
+          <p class="feedback">A must-have for any developer wanting to create that 'wow' factor. The glassmorphism and micro-interactions are top-notch.</p>
+          <div class="user-info">
+            <img src="https://i.pravatar.cc/150?img=5" alt="Elena V." class="avatar" />
+            <div>
+              <h4 class="name">Elena V.</h4>
+              <span class="role">UI/UX Designer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="slider-nav">
+      <button class="nav-btn prev" id="prevBtn">❮</button>
+      <div class="dots" id="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+      <button class="nav-btn next" id="nextBtn">❯</button>
+    </div>
+  </div>
+  
+  <script src="./script.js"></script>
+</body>
+</html>

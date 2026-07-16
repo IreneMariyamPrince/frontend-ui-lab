@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coverflow Carousel</title>
+</head>
+<body>
+  <div class="coverflow-container">
+    <div class="coverflow" id="coverflow">
+      <!-- Cards -->
+      <div class="cover-card active" data-index="0">
+        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&fit=crop" alt="Album 1">
+      </div>
+      <div class="cover-card" data-index="1">
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=400&fit=crop" alt="Album 2">
+      </div>
+      <div class="cover-card" data-index="2">
+        <img src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=400&fit=crop" alt="Album 3">
+      </div>
+      <div class="cover-card" data-index="3">
+        <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?w=400&fit=crop" alt="Album 4">
+      </div>
+      <div class="cover-card" data-index="4">
+        <img src="https://images.unsplash.com/photo-1557682260-96773eb01377?w=400&fit=crop" alt="Album 5">
+      </div>
+    </div>
+    
+    <!-- Navigation Controls -->
+    <div class="controls">
+      <button class="nav-btn" id="prevBtn">❮</button>
+      <button class="nav-btn" id="nextBtn">❯</button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

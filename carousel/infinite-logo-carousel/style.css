@@ -1,0 +1,78 @@
+:root {
+  --animation-speed: 25s;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f1115;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.logo-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: linear-gradient(90deg, rgba(15,17,21,1) 0%, rgba(25,28,35,1) 50%, rgba(15,17,21,1) 100%);
+  position: relative;
+}
+
+/* Gradient fade on edges */
+.logo-carousel::before,
+.logo-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logo-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, #0f1115 0%, transparent 100%);
+}
+
+.logo-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, #0f1115 0%, transparent 100%);
+}
+
+.logo-track {
+  display: flex;
+  width: calc(200px * 12); /* 200px per slide * total slides (original + duplicated) */
+  animation: scroll var(--animation-speed) linear infinite;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-slide {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 100px;
+}
+
+.logo-slide img {
+  width: 80px;
+  height: auto;
+  filter: grayscale(100%) opacity(0.5);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo-slide:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.2);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 6)); /* Scroll exactly the width of original set */ }
+}

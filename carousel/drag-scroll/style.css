@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #141414; /* Netflix dark gray */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  padding-left: 50px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.drag-carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  /* Hide scrollbar for smooth UI */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  cursor: grab;
+}
+
+.drag-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.drag-carousel.active {
+  cursor: grabbing;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Prevent image dragging from interfering with container drag */
+}
+
+.item:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}

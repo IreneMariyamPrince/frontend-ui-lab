@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing Toggle</title>
+</head>
+<body>
+  <div class="pricing-container">
+    <div class="header">
+      <h2>Simple, transparent pricing</h2>
+      <p>No hidden fees. No surprise charges.</p>
+    </div>
+
+    <!-- Toggle Switch -->
+    <div class="toggle-container">
+      <span class="toggle-label" id="monthly-label">Monthly</span>
+      <label class="switch">
+        <input type="checkbox" id="pricing-toggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-label" id="yearly-label">Annually <span class="badge">Save 20%</span></span>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="cards-wrapper">
+      
+      <!-- Basic Plan -->
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <p class="desc">Perfect for individuals just getting started.</p>
+        <div class="price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="15" data-yearly="12">15</span>
+          <span class="period">/mo</span>
+        </div>
+        <button class="btn">Get Started</button>
+        <ul class="features">
+          <li>✅ 1 User Account</li>
+          <li>✅ 5GB Storage</li>
+          <li>✅ Basic Support</li>
+          <li class="disabled">❌ Custom Domain</li>
+          <li class="disabled">❌ Advanced Analytics</li>
+        </ul>
+      </div>
+
+      <!-- Pro Plan (Highlighted) -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <h3>Professional</h3>
+        <p class="desc">Ideal for growing teams and businesses.</p>
+        <div class="price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="49" data-yearly="39">49</span>
+          <span class="period">/mo</span>
+        </div>
+        <button class="btn btn-primary">Start Free Trial</button>
+        <ul class="features">
+          <li>✅ 5 User Accounts</li>
+          <li>✅ 50GB Storage</li>
+          <li>✅ Priority Support</li>
+          <li>✅ Custom Domain</li>
+          <li class="disabled">❌ Advanced Analytics</li>
+        </ul>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p class="desc">For large scale organizations and heavy usage.</p>
+        <div class="price">
+          <span class="currency">$</span>
+          <span class="amount" data-monthly="99" data-yearly="79">99</span>
+          <span class="period">/mo</span>
+        </div>
+        <button class="btn">Contact Sales</button>
+        <ul class="features">
+          <li>✅ Unlimited Users</li>
+          <li>✅ 500GB Storage</li>
+          <li>✅ 24/7 Dedicated Support</li>
+          <li>✅ Custom Domain</li>
+          <li>✅ Advanced Analytics</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

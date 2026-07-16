@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc; /* Very light slate */
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+  padding: 60px 20px;
+}
+
+.bento-container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.bento-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.bento-header h2 {
+  font-size: 40px;
+  margin: 0 0 15px 0;
+  letter-spacing: -1px;
+}
+
+.bento-header p {
+  font-size: 18px;
+  color: #64748b;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(250px, auto);
+  gap: 24px;
+}
+
+.bento-box {
+  background: white;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.03);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Grid Span Utilities */
+.box-1 { grid-column: span 2; }
+.box-2 { grid-column: span 1; }
+.box-3 { grid-column: span 1; grid-row: span 2; }
+.box-4 { grid-column: span 2; }
+.box-5 { grid-column: span 3; } 
+/* Wait, adjusting grid to fit a perfect rectangle. 
+   Total columns: 3.
+   Row 1: box-1 (2 cols), box-2 (1 col).
+   Row 2: box-3 (1 col, 2 rows tall) - Wait, if it spans 2 rows, it takes up space in Row 2 and Row 3.
+   Let's do:
+   Row 1: box-1 (2 cols), box-3 (1 col, spans 2 rows)
+   Row 2: box-4 (1 col), box-2 (1 col) - This fills Row 2.
+   Row 3: box-5 (3 cols) - Spans entire bottom row.
+*/
+.box-1 { grid-column: span 2; } /* Top Left */
+.box-3 { grid-column: 3; grid-row: span 2; background: #0f172a; color: white; } /* Top Right, Tall, Dark Theme */
+.box-2 { grid-column: 1; } /* Middle Left */
+.box-4 { grid-column: 2; } /* Middle Center */
+.box-5 { grid-column: span 3; } /* Bottom Full Width */
+
+
+/* Content Styling */
+.box-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 600;
+  z-index: 2;
+  position: relative;
+}
+
+.box-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.5;
+  z-index: 2;
+  position: relative;
+}
+
+.box-3 .box-content p {
+  color: #94a3b8;
+}
+
+/* Visual Embeds inside Boxes */
+.box-visual {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Abstract Chart */
+.chart-bar {
+  width: 40px;
+  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  border-radius: 8px 8px 0 0;
+  margin: 0 10px;
+  animation: grow 2s ease-out infinite alternate;
+  transform-origin: bottom;
+}
+.bar-1 { height: 40%; animation-delay: 0s; }
+.bar-2 { height: 70%; animation-delay: 0.2s; }
+.bar-3 { height: 50%; animation-delay: 0.4s; }
+.bar-4 { height: 90%; animation-delay: 0.6s; }
+
+@keyframes grow {
+  0% { transform: scaleY(0.8); }
+  100% { transform: scaleY(1.1); }
+}
+
+/* Globe Pulse */
+.globe-pulse {
+  width: 80px;
+  height: 80px;
+  background: #10b981;
+  border-radius: 50%;
+  position: relative;
+}
+.globe-pulse::before, .globe-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  animation: pulse 2s linear infinite;
+}
+.globe-pulse::after {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% { width: 100%; height: 100%; opacity: 1; }
+  100% { width: 250%; height: 250%; opacity: 0; }
+}
+
+/* Shield */
+.shield {
+  width: 100px;
+  height: 110px;
+  background: rgba(255,255,255,0.1);
+  clip-path: polygon(50% 0%, 100% 20%, 100% 70%, 50% 100%, 0% 70%, 0% 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.shield-inner {
+  width: 60px;
+  height: 70px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  clip-path: polygon(50% 0%, 100% 20%, 100% 70%, 50% 100%, 0% 70%, 0% 20%);
+}
+
+/* AI Core */
+.ai-core {
+  width: 80px;
+  height: 80px;
+  background: conic-gradient(from 0deg, #ec4899, #8b5cf6, #3b82f6, #ec4899);
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Integrations */
+.visual-horizontal {
+  align-items: center;
+  margin-top: 30px;
+}
+.icon {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-weight: 600;
+  z-index: 2;
+}
+.icon.center {
+  background: #0f172a;
+  color: white;
+}
+.connector {
+  height: 3px;
+  width: 50px;
+  background: #cbd5e1;
+  position: relative;
+}
+.connector::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0;
+  width: 10px; height: 7px;
+  background: #3b82f6;
+  border-radius: 10px;
+  animation: flow 2s linear infinite;
+}
+
+@keyframes flow {
+  0% { left: 0; opacity: 0; }
+  50% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .bento-box {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    min-height: 250px;
+  }
+}
