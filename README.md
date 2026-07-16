@@ -41,6 +41,13 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [Data Table](./dashboard/data-table) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f65a7-dccf-71eb-8a09-133eccf6b5f7) |
 | [Command Palette](./navigation/command-palette) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f65a5-3280-718a-a294-1b475b195884) |
 
+### Authentication & Security
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Split-Screen Login](./auth/split-login) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6abf-724b-72f4-9d12-74c430c958c8) |
+| [OTP Verification](./auth/otp-verification) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6b2b-dc44-705f-9e96-16675297ab6c) |
+| [Multi-step Signup](./auth/multi-step-signup) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6b2e-2863-709f-9539-2fd79b04cbe6) |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies

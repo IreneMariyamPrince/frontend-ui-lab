@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-step Signup</title>
+</head>
+<body>
+  
+  <div class="signup-container">
+    
+    <!-- Progress Indicator -->
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="steps-wrapper">
+        <div class="step active" data-step="1">
+          <div class="step-circle">1</div>
+          <span class="step-text">Account</span>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-circle">2</div>
+          <span class="step-text">Personal</span>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-circle">3</div>
+          <span class="step-text">Security</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forms Wrapper -->
+    <div class="form-wrapper">
+      <form id="multiStepForm">
+        
+        <!-- Step 1: Account Details -->
+        <div class="form-section active" id="section-1">
+          <h2>Create your account</h2>
+          <p class="section-desc">Let's get started with your basic account details.</p>
+          
+          <div class="input-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="johndoe" required />
+          </div>
+
+          <div class="btn-group right">
+            <button type="button" class="btn btn-primary next-btn">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Personal Info -->
+        <div class="form-section" id="section-2">
+          <h2>Personal information</h2>
+          <p class="section-desc">Tell us a little bit about yourself.</p>
+          
+          <div class="grid-2">
+            <div class="input-group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" placeholder="John" required />
+            </div>
+            <div class="input-group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" placeholder="Doe" required />
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="jobTitle">Job title (optional)</label>
+            <input type="text" id="jobTitle" placeholder="Software Engineer" />
+          </div>
+
+          <div class="btn-group split">
+            <button type="button" class="btn btn-outline prev-btn">Back</button>
+            <button type="button" class="btn btn-primary next-btn">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Security -->
+        <div class="form-section" id="section-3">
+          <h2>Secure your account</h2>
+          <p class="section-desc">Choose a strong password to protect your account.</p>
+          
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Min. 8 characters" required />
+          </div>
+          
+          <div class="input-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Repeat your password" required />
+          </div>
+
+          <div class="checkbox-group">
+            <label class="custom-checkbox">
+              <input type="checkbox" required />
+              <span class="checkmark"></span>
+              I agree to the Terms of Service and Privacy Policy.
+            </label>
+          </div>
+
+          <div class="btn-group split">
+            <button type="button" class="btn btn-outline prev-btn">Back</button>
+            <button type="submit" class="btn btn-primary submit-btn">Create Account</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
