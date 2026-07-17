@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pure CSS Bar Chart</title>
+</head>
+<body>
+  
+  <div class="chart-container">
+    <div class="chart-header">
+      <h2>Weekly Revenue</h2>
+      <p>Last 7 days performance</p>
+    </div>
+
+    <div class="chart">
+      <!-- Y-Axis Lines (Background) -->
+      <div class="grid-lines">
+        <div class="grid-line" data-value="10k"></div>
+        <div class="grid-line" data-value="7.5k"></div>
+        <div class="grid-line" data-value="5k"></div>
+        <div class="grid-line" data-value="2.5k"></div>
+        <div class="grid-line" data-value="0"></div>
+      </div>
+
+      <!-- Bars -->
+      <div class="bars">
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 40%;" data-tooltip="$4,000"></div>
+          <span class="label">Mon</span>
+        </div>
+        
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 65%;" data-tooltip="$6,500"></div>
+          <span class="label">Tue</span>
+        </div>
+        
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 85%;" data-tooltip="$8,500"></div>
+          <span class="label">Wed</span>
+        </div>
+        
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 50%;" data-tooltip="$5,000"></div>
+          <span class="label">Thu</span>
+        </div>
+        
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 95%;" data-tooltip="$9,500"></div>
+          <span class="label">Fri</span>
+        </div>
+        
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 70%;" data-tooltip="$7,000"></div>
+          <span class="label">Sat</span>
+        </div>
+        
+        <div class="bar-group">
+          <div class="bar" style="--target-height: 30%;" data-tooltip="$3,000"></div>
+          <span class="label">Sun</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

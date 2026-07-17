@@ -1,0 +1,191 @@
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --bar-color: #3b82f6;
+  --bar-hover: #2563eb;
+  --chart-height: 250px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.chart-container {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 600px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.chart-header {
+  margin-bottom: 32px;
+}
+
+.chart-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.chart-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Chart Area */
+.chart {
+  position: relative;
+  height: var(--chart-height);
+  margin-top: 20px;
+  padding-left: 40px; /* Space for Y-axis labels */
+}
+
+/* Grid Lines */
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.grid-line {
+  position: relative;
+  width: 100%;
+  border-top: 1px dashed var(--border);
+}
+
+.grid-line::before {
+  content: attr(data-value);
+  position: absolute;
+  left: -40px;
+  top: -8px;
+  width: 32px;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Bars Layout */
+.bars {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-bottom: 1px; /* To sit perfectly on the 0 line */
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  width: 40px;
+  position: relative;
+}
+
+/* The Bar Itself */
+.bar {
+  width: 100%;
+  background-color: var(--bar-color);
+  border-radius: 6px 6px 0 0;
+  /* Animate from 0 to var(--target-height) */
+  animation: growBar 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  transform-origin: bottom;
+}
+
+@keyframes growBar {
+  0% { height: 0; }
+  100% { height: var(--target-height); }
+}
+
+.bar:hover {
+  background-color: var(--bar-hover);
+  transform: scaleX(1.1);
+}
+
+/* Tooltip */
+.bar::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(var(--target-height) + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--text-main);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, bottom 0.2s;
+  pointer-events: none;
+}
+
+/* Tooltip arrow */
+.bar::before {
+  content: '';
+  position: absolute;
+  bottom: calc(var(--target-height) + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: var(--text-main) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, bottom 0.2s;
+  pointer-events: none;
+}
+
+.bar:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(var(--target-height) + 15px);
+}
+
+.bar:hover::before {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(var(--target-height) + 9px);
+}
+
+/* X-Axis Labels */
+.label {
+  position: absolute;
+  bottom: -24px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}

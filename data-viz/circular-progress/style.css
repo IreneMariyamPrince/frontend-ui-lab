@@ -1,0 +1,104 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --track-color: #334155;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: var(--text-muted);
+}
+
+/* Progress Container */
+.progress-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 32px auto;
+}
+
+/* SVG SVG Styling */
+.progress-ring {
+  transform: rotate(-90deg); /* Start at 12 o'clock */
+}
+
+.progress-ring-bg {
+  stroke: var(--track-color);
+}
+
+.progress-ring-circle {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.3s;
+}
+
+/* Center Text */
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: baseline;
+}
+
+.progress-text span {
+  font-size: 48px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  background-color: var(--track-color);
+  color: var(--text-main);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+}

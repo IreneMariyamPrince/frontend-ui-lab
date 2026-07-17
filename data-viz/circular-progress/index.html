@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circular Progress</title>
+</head>
+<body>
+  
+  <div class="card">
+    <h2>Project Completion</h2>
+    
+    <div class="progress-container">
+      <svg class="progress-ring" width="160" height="160">
+        <!-- Background circle -->
+        <circle class="progress-ring-bg" stroke-width="12" fill="transparent" r="70" cx="80" cy="80"/>
+        <!-- Foreground animated circle -->
+        <circle class="progress-ring-circle" stroke-width="12" fill="transparent" r="70" cx="80" cy="80"/>
+      </svg>
+      <div class="progress-text">
+        <span id="progressValue">0</span>%
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" onclick="setProgress(25)">25%</button>
+      <button class="btn" onclick="setProgress(50)">50%</button>
+      <button class="btn" onclick="setProgress(75)">75%</button>
+      <button class="btn" onclick="setProgress(100)">100%</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

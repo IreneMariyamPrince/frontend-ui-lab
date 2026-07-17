@@ -76,6 +76,13 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [Glassmorphic Modal](./notifications/custom-modal) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f80-98bf-7556-93e2-53ef7aaf517e) |
 | [Sticky Cookie Banner](./notifications/cookie-banner) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f7c-82ca-750a-80bd-4732092a3161) |
 
+### Data Visualization
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Animated Circular Progress](./data-viz/circular-progress) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6fa2-1e09-7833-9885-00905eda2789) |
+| [Animated Stat Counters](./data-viz/animated-counter) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f88-656b-75dc-b48f-629c743b3dfd) |
+| [Pure CSS Bar Chart](./data-viz/css-bar-chart) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6fa3-6549-785b-90a5-b4019f93daa3) |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Stat Counters</title>
+</head>
+<body>
+  
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </div>
+      <div class="stat-value counter" data-target="15234">0</div>
+      <div class="stat-label">Total Users</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+      </div>
+      <div class="stat-value counter" data-target="845">0</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      </div>
+      <!-- Note: We can add a prefix/suffix in CSS or JS, here we'll let JS handle formatting if needed -->
+      <div class="stat-value counter prefix-dollar" data-target="982500">0</div>
+      <div class="stat-label">Total Revenue</div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
