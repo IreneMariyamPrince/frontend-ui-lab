@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS-Only Magic Game</title>
+</head>
+<body>
+  
+  <div class="game-board">
+    <div class="game-header">
+      <h2>CSS-Only Target Practice</h2>
+      <p>No JavaScript. Pure CSS Counters and <code>:checked</code> states.</p>
+      <div class="score-board">Score: <span class="score"></span> / 5</div>
+    </div>
+
+    <!-- The Game State Inputs (Hidden) -->
+    <input type="checkbox" id="target1" class="target-input">
+    <input type="checkbox" id="target2" class="target-input">
+    <input type="checkbox" id="target3" class="target-input">
+    <input type="checkbox" id="target4" class="target-input">
+    <input type="checkbox" id="target5" class="target-input">
+
+    <!-- The Playing Field -->
+    <div class="field">
+      <!-- Targets are labels for the hidden checkboxes -->
+      <label for="target1" class="target t1">
+        <div class="bullseye"></div>
+      </label>
+      <label for="target2" class="target t2">
+        <div class="bullseye"></div>
+      </label>
+      <label for="target3" class="target t3">
+        <div class="bullseye"></div>
+      </label>
+      <label for="target4" class="target t4">
+        <div class="bullseye"></div>
+      </label>
+      <label for="target5" class="target t5">
+        <div class="bullseye"></div>
+      </label>
+    </div>
+
+    <!-- Win State (Appears when all 5 are checked) -->
+    <div class="win-message">
+      <h2>YOU WIN!</h2>
+      <button type="reset" class="btn" onclick="window.location.reload()">Play Again</button>
+    </div>
+  </div>
+
+</body>
+</html>

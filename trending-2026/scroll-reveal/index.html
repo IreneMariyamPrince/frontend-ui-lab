@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll-Driven Reveal</title>
+</head>
+<body>
+  
+  <header class="hero">
+    <h1>Scroll Down</h1>
+    <p>Using CSS <code>animation-timeline: view()</code></p>
+    <div class="scroll-indicator">↓</div>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- Card 1 -->
+    <div class="reveal-card">
+      <div class="card-image bg-1"></div>
+      <div class="card-content">
+        <h2>Native CSS Magic</h2>
+        <p>This animation is powered entirely by CSS. No JavaScript Intersection Observers are needed anymore in 2026!</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="reveal-card">
+      <div class="card-image bg-2"></div>
+      <div class="card-content">
+        <h2>Hardware Accelerated</h2>
+        <p>Because the browser handles the scroll timeline natively, these animations are incredibly smooth and performant.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="reveal-card">
+      <div class="card-image bg-3"></div>
+      <div class="card-content">
+        <h2>The Future of Web Design</h2>
+        <p>Say goodbye to complex scroll-jacking libraries. The future is built into the browser.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <h2>End of Demo</h2>
+  </footer>
+
+</body>
+</html>

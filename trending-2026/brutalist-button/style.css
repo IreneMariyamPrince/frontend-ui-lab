@@ -1,0 +1,135 @@
+:root {
+  --bg-color: #fdf6e3; /* Warm off-white paper color */
+  --btn-color: #ff3e00; /* Extremely vibrant, high-contrast orange */
+  --text-main: #111111;
+  --border-color: #111111;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Using a monospaced font is classic brutalism */
+  font-family: 'Space Mono', monospace; 
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--border-color) 1px, transparent 0);
+  background-size: 20px 20px; /* Dot matrix background */
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-container {
+  text-align: center;
+  background-color: var(--bg-color);
+  padding: 40px;
+  border: 3px solid var(--border-color);
+  box-shadow: 12px 12px 0px var(--border-color);
+}
+
+.demo-container h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.demo-container p {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+/* Brutalist Button Container */
+.brutalist-button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  /* Removed user select so rapid clicking doesn't highlight text */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Hard Shadow Layer */
+.button-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--border-color);
+  transform: translate(8px, 8px);
+  transition: transform 100ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  border: 3px solid var(--border-color);
+}
+
+/* 3D Edge Layer (Optional, for extra thickness) */
+.button-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--btn-color);
+  filter: brightness(0.7);
+  transform: translate(4px, 4px);
+  transition: transform 100ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  border: 3px solid var(--border-color);
+}
+
+/* Front Face */
+.button-front {
+  display: block;
+  position: relative;
+  padding: 16px 32px;
+  background: var(--btn-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid var(--border-color);
+  transform: translate(0, 0);
+  transition: transform 100ms cubic-bezier(0.3, 0.7, 0.4, 1), background-color 100ms;
+}
+
+/* Hover States */
+.brutalist-button:hover .button-front {
+  background: #ff5522; /* Slightly lighter on hover */
+  transform: translate(-2px, -2px);
+}
+
+.brutalist-button:hover .button-shadow {
+  transform: translate(10px, 10px); /* Shadow stretches slightly */
+}
+
+/* Active (Click) States - The "Tactile" part */
+.brutalist-button:active .button-front {
+  transform: translate(8px, 8px); /* Smushes entirely into the shadow */
+  transition: transform 34ms; /* Very fast click */
+}
+
+.brutalist-button:active .button-edge {
+  transform: translate(8px, 8px);
+  transition: transform 34ms;
+}
+
+.brutalist-button:active .button-shadow {
+  transform: translate(8px, 8px); /* Shadow disappears under the button */
+  transition: transform 34ms;
+}
+
+/* Focus state for accessibility */
+.brutalist-button:focus-visible .button-front {
+  outline: 3px solid var(--border-color);
+  outline-offset: 4px;
+}

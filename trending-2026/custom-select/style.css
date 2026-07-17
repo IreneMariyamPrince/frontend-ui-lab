@@ -1,0 +1,149 @@
+:root {
+  --bg-color: #f1f5f9;
+  --select-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #8b5cf6;
+  --hover-bg: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Custom Select Container */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+/* The Trigger Button */
+.select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--select-bg);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.select-trigger:hover {
+  border-color: #cbd5e1;
+}
+
+.select-trigger:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.arrow-icon {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-muted);
+}
+
+/* When dropdown is open */
+.custom-select.open .select-trigger {
+  border-color: var(--primary);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.custom-select.open .arrow-icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+/* The Options List */
+.select-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: var(--select-bg);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  list-style: none;
+  padding: 8px;
+  box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.1);
+  z-index: 10;
+  
+  /* Modern Animation */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.98);
+  transform-origin: top;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-select.open .select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Individual Option */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-weight: 500;
+}
+
+.option:hover {
+  background: var(--hover-bg);
+}
+
+.option.selected {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--primary);
+}
+
+/* Animation on hover of options */
+.option:hover .option-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.option-icon {
+  font-size: 20px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}

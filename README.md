@@ -83,6 +83,15 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [Animated Stat Counters](./data-viz/animated-counter) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f88-656b-75dc-b48f-629c743b3dfd) |
 | [Pure CSS Bar Chart](./data-viz/css-bar-chart) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6fa3-6549-785b-90a5-b4019f93daa3) |
 
+### Trending 2026 UI (Viral CodePen Components)
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Tactile Brutalist Button](./trending-2026/brutalist-button) | ✅ | Local File |
+| [Scroll-Driven Reveal](./trending-2026/scroll-reveal) | ✅ | Local File |
+| [CSS-Only Magic Game](./trending-2026/css-only-game) | ✅ | Local File |
+| [Experimental Custom Select](./trending-2026/custom-select) | ✅ | Local File |
+| [AI Prompt Box 2.0](./trending-2026/ai-prompt-input) | ✅ | Local File |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies

@@ -1,0 +1,182 @@
+:root {
+  --bg-color: #0f172a;
+  --game-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --target-red: #ef4444;
+  --target-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* CSS Counter Initialization */
+  counter-reset: hits;
+}
+
+.game-board {
+  background-color: var(--game-bg);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.game-header h2 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.game-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.score-board {
+  font-size: 24px;
+  font-weight: 700;
+  color: #10b981; /* Green */
+}
+
+/* Hide the actual checkboxes */
+.target-input {
+  display: none;
+}
+
+/* Increment counter when checked */
+.target-input:checked {
+  counter-increment: hits;
+}
+
+/* Display the counter value */
+.score::after {
+  content: counter(hits);
+}
+
+/* The Playing Field */
+.field {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: #0f172a;
+  border-radius: 16px;
+  border: 2px solid #334155;
+}
+
+/* The Targets (Labels) */
+.target {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--target-red) 20%, var(--target-white) 20%, var(--target-white) 40%, var(--target-red) 40%, var(--target-red) 60%, var(--target-white) 60%, var(--target-white) 80%, var(--target-red) 80%);
+  cursor: crosshair;
+  animation: moveAround 8s infinite alternate ease-in-out;
+  transition: transform 0.1s, opacity 0.3s;
+}
+
+.target:hover {
+  transform: scale(1.1);
+}
+
+/* Initial positions & Animation delays for chaos */
+.t1 { top: 10%; left: 10%; animation-delay: 0s; animation-duration: 6s; }
+.t2 { top: 60%; left: 80%; animation-delay: -2s; animation-duration: 7s; }
+.t3 { top: 30%; left: 50%; animation-delay: -4s; animation-duration: 5s; }
+.t4 { top: 80%; left: 20%; animation-delay: -1s; animation-duration: 8s; }
+.t5 { top: 40%; left: 70%; animation-delay: -3s; animation-duration: 6s; }
+
+@keyframes moveAround {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(100px, 50px); }
+  50% { transform: translate(-50px, 150px); }
+  75% { transform: translate(-150px, -50px); }
+  100% { transform: translate(50px, -100px); }
+}
+
+/* 
+  MAGIC: When a checkbox is checked, hide its corresponding target.
+  We use the general sibling combinator (~) to find the .field and then target the specific label.
+*/
+#target1:checked ~ .field .t1,
+#target2:checked ~ .field .t2,
+#target3:checked ~ .field .t3,
+#target4:checked ~ .field .t4,
+#target5:checked ~ .field .t5 {
+  opacity: 0;
+  pointer-events: none; /* Can't click it again */
+  transform: scale(0);
+}
+
+/* Win Message - Hidden by default */
+.win-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  z-index: 10;
+}
+
+.win-message h2 {
+  font-size: 48px;
+  color: #10b981;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #2563eb;
+}
+
+/* MAGIC: The :has() pseudo-class (2026 Native Support)
+   If the game board HAS 5 checked inputs, show the win message! */
+.game-board:has(#target1:checked):has(#target2:checked):has(#target3:checked):has(#target4:checked):has(#target5:checked) .win-message {
+  opacity: 1;
+  visibility: visible;
+}

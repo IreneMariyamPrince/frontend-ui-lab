@@ -1,0 +1,214 @@
+:root {
+  --bg-color: #020617; /* Deep slate */
+  --box-bg: rgba(30, 41, 59, 0.7);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-1: #8b5cf6;
+  --accent-2: #3b82f6;
+  --accent-3: #ec4899;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ambient glowing background */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.15), transparent 25%);
+}
+
+.demo-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Prompt Container */
+.prompt-container {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  padding: 2px; /* Space for the gradient border */
+  transition: transform 0.3s;
+}
+
+.prompt-container:focus-within {
+  transform: translateY(-2px);
+}
+
+/* The Animated Gradient Border */
+.gradient-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: linear-gradient(
+    60deg,
+    var(--accent-1),
+    var(--accent-2),
+    var(--accent-3),
+    var(--accent-1)
+  );
+  background-size: 300% 300%;
+  animation: borderPan 4s ease infinite;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.prompt-container:focus-within .gradient-border {
+  opacity: 1;
+}
+
+@keyframes borderPan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Inner Input Area */
+.prompt-inner {
+  position: relative;
+  background-color: var(--box-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 22px; /* Slightly less to fit inside border */
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1;
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: none; /* JS will handle auto-resize */
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #475569;
+}
+
+.prompt-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-btn, .submit-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
+
+.submit-btn {
+  background: var(--text-main);
+  color: var(--bg-color);
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Generating State */
+.prompt-container.generating .prompt-inner {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.generating-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--box-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 22px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.prompt-container.generating .generating-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.generating-overlay p {
+  font-weight: 500;
+  background: linear-gradient(to right, var(--text-main), var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseText 2s infinite;
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Bouncing Dots */
+.dots span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-2);
+  border-radius: 50%;
+  margin: 0 2px;
+  animation: bounceDot 1.4s infinite ease-in-out both;
+}
+
+.dots span:nth-child(1) { animation-delay: -0.32s; }
+.dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounceDot {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
