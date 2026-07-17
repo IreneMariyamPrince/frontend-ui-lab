@@ -69,6 +69,13 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [Slide-out Shopping Cart](./ecommerce/shopping-cart) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f79-f6e2-74e1-afb3-7127b20f2248) |
 | [Checkout Stepper](./ecommerce/checkout-stepper) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f6f-64c5-7438-b100-81964ea40df5) |
 
+### Notifications & Modals
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Stackable Toast Notifications](./notifications/toast-stack) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f80-a148-755c-b5e3-97ea2ff45217) |
+| [Glassmorphic Modal](./notifications/custom-modal) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f80-98bf-7556-93e2-53ef7aaf517e) |
+| [Sticky Cookie Banner](./notifications/cookie-banner) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f7c-82ca-750a-80bd-4732092a3161) |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies

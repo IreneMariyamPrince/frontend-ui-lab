@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Banner</title>
+</head>
+<body>
+  
+  <div class="page-content">
+    <h1>Cookie Consent Demo</h1>
+    <p>A sticky cookie banner will slide up from the bottom if you haven't accepted or declined cookies yet.</p>
+    <p>We use <code>localStorage</code> to remember your choice.</p>
+    
+    <button class="btn btn-outline reset-btn" id="resetConsentBtn">Reset Cookie Choice (For Demo)</button>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner" aria-label="Cookie consent banner" role="dialog">
+    <div class="cookie-content">
+      <div class="cookie-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><circle cx="8.5" cy="8.5" r="1.5"></circle><circle cx="15.5" cy="14.5" r="1.5"></circle><circle cx="10.5" cy="16.5" r="1.5"></circle><circle cx="14.5" cy="9.5" r="1.5"></circle></svg>
+      </div>
+      <div class="cookie-text">
+        <h3>We use cookies</h3>
+        <p>This website uses cookies to enhance your browsing experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.</p>
+      </div>
+    </div>
+    
+    <div class="cookie-actions">
+      <button class="btn btn-outline" id="declineCookiesBtn">Decline</button>
+      <button class="btn btn-primary" id="acceptCookiesBtn">Accept All</button>
+    </div>
+    
+    <button class="cookie-close" id="closeCookieBtn" aria-label="Close banner">
+      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

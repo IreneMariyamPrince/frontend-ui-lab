@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackable Toast Notifications</title>
+</head>
+<body>
+  
+  <div class="demo-container">
+    <h1>Toast Notifications</h1>
+    <p>Click the buttons below to trigger different types of toast notifications. They will stack neatly in the bottom right corner.</p>
+    
+    <div class="btn-group">
+      <button class="btn btn-success" onclick="showToast('success', 'Successfully saved!', 'Your profile has been updated.')">Success</button>
+      <button class="btn btn-error" onclick="showToast('error', 'Update failed', 'Please check your connection and try again.')">Error</button>
+      <button class="btn btn-info" onclick="showToast('info', 'New update available', 'Version 2.0 is now ready to download.')">Info</button>
+      <button class="btn btn-warning" onclick="showToast('warning', 'Low storage space', 'You have less than 1GB remaining.')">Warning</button>
+    </div>
+  </div>
+
+  <!-- Container for all toasts -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
