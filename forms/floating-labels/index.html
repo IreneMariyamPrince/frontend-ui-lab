@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floating Labels</title>
+</head>
+<body>
+  
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you. Send us a message!</p>
+
+    <form class="floating-form">
+      
+      <div class="floating-group">
+        <input type="text" id="name" class="floating-input" placeholder=" " required />
+        <label for="name" class="floating-label">Full Name</label>
+      </div>
+
+      <div class="floating-group">
+        <input type="email" id="email" class="floating-input" placeholder=" " required />
+        <label for="email" class="floating-label">Email Address</label>
+      </div>
+
+      <div class="floating-group">
+        <textarea id="message" class="floating-input" rows="4" placeholder=" " required></textarea>
+        <label for="message" class="floating-label">Your Message</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>

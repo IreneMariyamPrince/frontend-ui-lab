@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag and Drop File Upload</title>
+</head>
+<body>
+  
+  <div class="upload-container">
+    <h2>Upload documents</h2>
+    <p class="subtitle">Attach files below. Max size 10MB.</p>
+
+    <!-- Dropzone Area -->
+    <div class="dropzone" id="dropzone">
+      <div class="dropzone-content">
+        <div class="upload-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+        </div>
+        <p class="primary-text"><span class="highlight">Click to upload</span> or drag and drop</p>
+        <p class="secondary-text">SVG, PNG, JPG or PDF</p>
+      </div>
+      <!-- Hidden file input -->
+      <input type="file" id="fileInput" multiple accept=".svg,.png,.jpg,.jpeg,.pdf" />
+    </div>
+
+    <!-- Upload Progress Area -->
+    <div class="upload-list" id="uploadList">
+      <!-- File items will be injected here via JS -->
+    </div>
+
+    <button type="button" class="btn btn-primary" id="saveBtn" disabled>Save files</button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

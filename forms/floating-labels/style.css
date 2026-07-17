@@ -1,0 +1,131 @@
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #cbd5e1;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --focus-ring: rgba(79, 70, 229, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.floating-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Floating Label Styles */
+.floating-group {
+  position: relative;
+  width: 100%;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 14px 16px;
+  padding-top: 24px; /* extra space at top for label */
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* The label styling */
+.floating-label {
+  position: absolute;
+  left: 16px;
+  top: 18px; /* vertically centered if input is ~50px tall */
+  color: var(--text-muted);
+  font-size: 16px;
+  pointer-events: none; /* allows clicking through to input */
+  transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transform-origin: left top;
+}
+
+/* The magic: when input is focused, OR when the placeholder is NOT shown (meaning it has text) */
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  transform: translateY(-10px) scale(0.75);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Keep color muted if it just has text but is not focused */
+.floating-input:not(:focus):not(:placeholder-shown) ~ .floating-label {
+  color: var(--text-muted);
+}
+
+/* Textarea specific adjustment */
+textarea.floating-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-hover);
+}

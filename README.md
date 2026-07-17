@@ -55,6 +55,13 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [macOS Dock](./creative/macos-dock) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f62-d765-729c-bb0e-0a21b7ff2195) |
 | [Drag-and-Drop List](./creative/drag-drop-list) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f5e-f544-7216-97c6-309c623271b5) |
 
+### Forms & Interactive Inputs
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Floating Labels](./forms/floating-labels) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f66-cec4-7306-a930-617b474114cc) |
+| [Password Strength Meter](./forms/password-strength) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f67-a0f5-732a-8a3b-503fb37a820c) |
+| [Drag-and-Drop File Upload](./forms/file-upload) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f68-9519-734e-9872-863878e1749a) |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Strength</title>
+</head>
+<body>
+  
+  <div class="form-container">
+    <h2>Set a password</h2>
+    <p>Must be at least 8 characters long.</p>
+
+    <div class="input-wrapper">
+      <input type="password" id="password" class="password-input" placeholder="Enter your password" />
+      <button type="button" class="toggle-btn" id="toggleBtn">
+        Show
+      </button>
+    </div>
+
+    <!-- Strength Meter -->
+    <div class="strength-meter">
+      <div class="strength-bar-container">
+        <div class="strength-bar" id="strengthBar"></div>
+      </div>
+      <div class="strength-label" id="strengthLabel">Weak</div>
+    </div>
+
+    <!-- Criteria Checklist -->
+    <ul class="criteria-list">
+      <li id="length" class="criterion">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle></svg>
+        </span>
+        At least 8 characters
+      </li>
+      <li id="lowercase" class="criterion">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle></svg>
+        </span>
+        One lowercase letter
+      </li>
+      <li id="uppercase" class="criterion">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle></svg>
+        </span>
+        One uppercase letter
+      </li>
+      <li id="number" class="criterion">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle></svg>
+        </span>
+        One number
+      </li>
+      <li id="symbol" class="criterion">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"></circle></svg>
+        </span>
+        One special character
+      </li>
+    </ul>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
