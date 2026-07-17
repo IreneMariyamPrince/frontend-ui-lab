@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Product Card</title>
+</head>
+<body>
+  
+  <div class="product-card">
+    <!-- Image Gallery -->
+    <div class="product-image-container">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nike Red" class="product-image active" id="img-red" />
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nike Black" class="product-image" id="img-black" />
+      <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nike White" class="product-image" id="img-white" />
+      
+      <!-- Badges -->
+      <span class="badge badge-new">New</span>
+      <button class="wishlist-btn" aria-label="Add to wishlist">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+      </button>
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <div class="product-category">Running Shoes</div>
+      <h3 class="product-title">Nike Air Zoom Pegasus</h3>
+      
+      <!-- Price & Rating -->
+      <div class="price-rating">
+        <div class="price">
+          <span class="current-price">$120.00</span>
+          <span class="original-price">$150.00</span>
+        </div>
+        <div class="rating">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="#facc15" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <span>4.8 (124)</span>
+        </div>
+      </div>
+
+      <!-- Color Swatches -->
+      <div class="options-container">
+        <div class="swatches">
+          <button class="swatch active" style="background-color: #ef4444;" data-color="red" aria-label="Red"></button>
+          <button class="swatch" style="background-color: #111827;" data-color="black" aria-label="Black"></button>
+          <button class="swatch" style="background-color: #f3f4f6;" data-color="white" aria-label="White"></button>
+        </div>
+        <div class="sizes">
+          <select class="size-select" aria-label="Select size">
+            <option value="8">US 8</option>
+            <option value="9">US 9</option>
+            <option value="10" selected>US 10</option>
+            <option value="11">US 11</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Action -->
+      <button class="add-to-cart-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span>Add to Cart</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

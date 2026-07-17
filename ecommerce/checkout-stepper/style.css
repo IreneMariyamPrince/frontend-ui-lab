@@ -1,0 +1,204 @@
+:root {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #10b981;
+  --circle-size: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.checkout-container {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Stepper Component */
+.stepper-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.progress-line-container {
+  position: absolute;
+  top: calc(var(--circle-size) / 2);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--border);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.progress-line {
+  height: 100%;
+  width: 33%; /* Updated by JS */
+  background-color: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.step-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 80px;
+}
+
+.step-circle {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  background-color: white;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.4s ease;
+}
+
+.step-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.4s ease;
+}
+
+/* States */
+.step-item.active .step-circle {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.step-item.active .step-title {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.step-item.completed .step-circle {
+  border-color: var(--success);
+  background-color: var(--success);
+  color: white;
+}
+
+.step-item.completed .step-title {
+  color: var(--text-main);
+}
+
+/* Mock Content Area */
+.step-content {
+  padding: 32px;
+  background-color: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  min-height: 180px;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.step-content p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.mock-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-line {
+  height: 40px;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.input-line.half {
+  width: 50%;
+}
+
+/* Controls */
+.stepper-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  background-color: #f1f5f9;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -62,6 +62,13 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [Password Strength Meter](./forms/password-strength) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f67-a0f5-732a-8a3b-503fb37a820c) |
 | [Drag-and-Drop File Upload](./forms/file-upload) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f68-9519-734e-9872-863878e1749a) |
 
+### E-commerce UI
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Premium Product Card](./ecommerce/product-card) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f78-cd61-74c3-87f1-c34a9a2a9b95) |
+| [Slide-out Shopping Cart](./ecommerce/shopping-cart) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f79-f6e2-74e1-afb3-7127b20f2248) |
+| [Checkout Stepper](./ecommerce/checkout-stepper) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f6f-64c5-7438-b100-81964ea40df5) |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies
