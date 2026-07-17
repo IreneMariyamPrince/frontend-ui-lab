@@ -1,0 +1,96 @@
+:root {
+  --bg-color: #0f172a;
+  --blob-color: #0ea5e9;
+  --blob-color-alt: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-wrapper {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gooey-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  filter: url('#goo');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--blob-color), var(--blob-color-alt));
+}
+
+.center-blob {
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+
+.orbiting-blob {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+}
+
+/* Orbit Animations */
+.orbit-1 {
+  animation: orbit1 3s infinite ease-in-out alternate;
+}
+.orbit-2 {
+  animation: orbit2 3s infinite ease-in-out alternate-reverse;
+}
+.orbit-3 {
+  animation: orbit3 2.5s infinite ease-in-out alternate;
+}
+.orbit-4 {
+  animation: orbit4 2.5s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.3); }
+}
+
+@keyframes orbit1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, -60px) scale(0.6); }
+}
+
+@keyframes orbit2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-60px, 60px) scale(0.6); }
+}
+
+@keyframes orbit3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-60px, -60px) scale(0.6); }
+}
+
+@keyframes orbit4 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 60px) scale(0.6); }
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag and Drop List</title>
+</head>
+<body>
+  
+  <div class="list-container">
+    <h2>Prioritize Tasks</h2>
+    <p class="subtitle">Drag and drop to reorder your list.</p>
+
+    <ul class="sortable-list">
+      <li class="item" draggable="true">
+        <div class="details">
+          <img src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User">
+          <span>Review pull requests</span>
+        </div>
+        <i class="drag-handle">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </i>
+      </li>
+      <li class="item" draggable="true">
+        <div class="details">
+          <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="User">
+          <span>Write API documentation</span>
+        </div>
+        <i class="drag-handle">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </i>
+      </li>
+      <li class="item" draggable="true">
+        <div class="details">
+          <img src="https://i.pravatar.cc/150?img=33" alt="User">
+          <span>Design new landing page</span>
+        </div>
+        <i class="drag-handle">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </i>
+      </li>
+      <li class="item" draggable="true">
+        <div class="details">
+          <img src="https://i.pravatar.cc/150?img=47" alt="User">
+          <span>Fix mobile layout bug</span>
+        </div>
+        <i class="drag-handle">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </i>
+      </li>
+      <li class="item" draggable="true">
+        <div class="details">
+          <img src="https://i.pravatar.cc/150?img=12" alt="User">
+          <span>Client meeting preparation</span>
+        </div>
+        <i class="drag-handle">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </i>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

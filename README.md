@@ -48,6 +48,13 @@ CodePen UI Components -> GitHub Vanilla JS Components -> React Component Library
 | [OTP Verification](./auth/otp-verification) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6b2b-dc44-705f-9e96-16675297ab6c) |
 | [Multi-step Signup](./auth/multi-step-signup) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6b2e-2863-709f-9539-2fd79b04cbe6) |
 
+### Advanced Animations & Creative UI
+| Component | Status | Demo |
+|-----------|--------|------|
+| [Liquid Goo Loader](./creative/liquid-loader) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f60-3cfc-724a-a0e7-1952ddfe8bb5) |
+| [macOS Dock](./creative/macos-dock) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f62-d765-729c-bb0e-0a21b7ff2195) |
+| [Drag-and-Drop List](./creative/drag-drop-list) | ✅ | [CodePen](https://codepen.io/editor/IreneMariyamPrince/pen/019f6f5e-f544-7216-97c6-309c623271b5) |
+
 *(More components will be added here as they are built...)*
 
 ## 🛠 Technologies

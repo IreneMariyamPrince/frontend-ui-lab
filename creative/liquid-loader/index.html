@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liquid Goo Loader</title>
+</head>
+<body>
+  
+  <div class="loader-wrapper">
+    <div class="gooey-container">
+      <div class="blob center-blob"></div>
+      <div class="blob orbiting-blob orbit-1"></div>
+      <div class="blob orbiting-blob orbit-2"></div>
+      <div class="blob orbiting-blob orbit-3"></div>
+      <div class="blob orbiting-blob orbit-4"></div>
+    </div>
+  </div>
+
+  <!-- SVG Filter for the gooey effect -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="
+          1 0 0 0 0  
+          0 1 0 0 0  
+          0 0 1 0 0  
+          0 0 0 18 -7" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </defs>
+  </svg>
+
+</body>
+</html>
